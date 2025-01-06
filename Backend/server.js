@@ -1,12 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import { connectDB } from './config/db.js';
-import productRouter from './routes/product.route.js';
+import mongoose from 'mongoose';import productRouter from './routes/product.route.js';
 
 dotenv.config();
 
 const app = express();
+const PORT  = process.env.PORT
 app.use(express.json()); // Middleware to parse JSON data
 
 // Connect to MongoDB
@@ -21,9 +20,9 @@ mongoose
     process.exit(1); // Exit process if connection fails
   });
    
-  app.use('/api/products',productRouter);
+  app.use('/api/products', productRouter);
  
 console.log('MONGO_URI:', process.env.MONGO_URI);
-app.listen(5000, () => {
-  console.log('Server started at http://localhost:5000');
+app.listen(PORT, () => {
+  console.log('Server started at http://localhost:' + PORT);
 });
