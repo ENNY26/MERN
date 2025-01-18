@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    color: #f39c12;
+}
+
+.icon {
+    font-size: 24px;
+}
