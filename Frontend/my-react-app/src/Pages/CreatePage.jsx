@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import './CreatePage.css'
+import { useProductStore } from '../Store/product';
 
 const CreatePage = () => {
 const [newProduct, setNewProduct] = useState({
@@ -7,9 +8,12 @@ const [newProduct, setNewProduct] = useState({
     price: "",
     image: ""
 })
-const handleAddProduct = (e) =>{
+const {createProduct} = useProductStore()
+const handleAddProduct = async (e) =>{
+  const {success,message} = await createProduct(newProduct)
     e.preventDefault()
-    console.log(newProduct)
+    console.log("Success", success)
+    console.log("Message", message )
 
 }
   return (
