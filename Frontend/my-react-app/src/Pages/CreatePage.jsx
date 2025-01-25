@@ -9,17 +9,19 @@ const CreatePage = () => {
     image: "",
   });
 
+  const [feedback, setFeedback] = useState(null);
   const { createProduct, products } = useProductStore();
 
   const handleAddProduct = async (e) => {
     e.preventDefault(); // Prevent form submission from reloading the page
     const { success, message } = await createProduct(newProduct);
-
+    setFeedback({ success, message }); 
     console.log("Success:", success);
     console.log("Message:", message);
 
     if (success) {
-      console.log("Updated Products:", products); // Log updated products
+      <p>success</p>
+      console.log("Updated Products:", products); 
     } else {
       console.error("Error adding product:", message);
     }
@@ -67,6 +69,17 @@ const CreatePage = () => {
 
         <button type="submit" className="submit-btn">Submit</button>
       </form>
+
+      {feedback && (
+  <p
+    className={`feedback ${
+      feedback.success ? 'text-green-500' : 'text-red-500'
+    }`}
+  >
+    {feedback.message}
+  </p>
+)}
+
     </div>
   );
 };

@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* Base font size */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  body {
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Default font */
+    line-height: 1.6; /* Comfortable line spacing */
+    color: #333; /* Default text color */
+    margin: 0;
+  }
+  

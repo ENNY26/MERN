@@ -29,5 +29,11 @@ export const useProductStore = create((set) => ({
       console.error("Error creating product:", error);
       return { success: false, message: 'An error occurred. Please try again.' };
     }
+  },
+  fetchProducts: async () => {
+    const res = await fetch("/api/products")
+    const data =  await res.json()
+    set ({products: data.data})
+
   }
 }));

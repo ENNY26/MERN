@@ -1,0 +1,101 @@
+/* Homepage.css */
+
+/* General container styling */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Product card styling */
+.product-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 100%;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column; /* Default for mobile */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Horizontal layout for desktop */
+@media (min-width: 768px) {
+  .product-card {
+    flex-direction: row;
+    align-items: center;
+    max-width: 600px;
+  }
+}
+
+/* Product image styling */
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .product-image {
+    width: 40%;
+    height: 100%;
+  }
+}
+
+/* Product information styling */
+.product-info {
+  padding: 15px;
+  flex: 1;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  color: #27ae60;
+  margin: 10px 0 0;
+}
+
+/* Action icons styling */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eaeaea;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    border-top: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
+  }
+}
+
+.action-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+}
