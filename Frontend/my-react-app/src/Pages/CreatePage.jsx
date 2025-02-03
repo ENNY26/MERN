@@ -25,6 +25,7 @@ const CreatePage = () => {
     } else {
       console.error("Error adding product:", message);
     }
+    setNewProduct({name: '', price: '', image: ''})
   };
 
   return (
