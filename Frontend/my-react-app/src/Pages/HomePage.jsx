@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import deleteIcon from '../assets/delete.svg'
-import editIcon from '../assets/edit.svg'
-import watch from '../assets/watch.jpg'
 import './Homepage.css'
 import { useProductStore } from '../Store/product'
 import { Link } from 'react-router-dom'
