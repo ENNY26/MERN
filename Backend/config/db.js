@@ -6,4 +6,4 @@ export const connectDB = async () =>{
         console.log(`Error: ${error.message}`);
         process.exit(1) // process code 1 code means failure and 0 means success
     }
-}
+} 
