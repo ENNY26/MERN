@@ -19,9 +19,8 @@ const HomePage = () => {
     <div className="container">
       {products.length === 0 ? (
         <div className="no-products">
-          No products created.{" "}
           <Link to="/create-page">
-            <span>Click here to create</span>
+            <span>🚀 Click here to create a product 🚀</span>
           </Link>
         </div>
       ) : (
@@ -29,6 +28,7 @@ const HomePage = () => {
           <ProductCard key={product._id} product={product} />
         ))
       )}
+      
     </div>
   );
 };

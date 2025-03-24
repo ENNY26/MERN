@@ -1,9 +1,20 @@
 import React from 'react';
 import deleteIcon from '../assets/delete.svg';
 import editIcon from '../assets/edit.svg';
-import './ProductCard.css'
+import { useProductStore } from '../Store/product'; // Import the store
+import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
+  const { deleteProduct } = useProductStore();
+
+  const handleDeleteProduct = async (pid) => {
+    const { success, message } = await deleteProduct(pid);
+    if (!success) {
+      alert(message);
+    }
+    alert('Product deleted successfully');
+  };
+
   return (
     <div className="product-card">
       <div className="image-container">
@@ -13,7 +24,12 @@ const ProductCard = ({ product }) => {
       <p className="product-price">${product.price}</p>
       <div className="icons">
         <img src={editIcon} alt="Edit" className="icon edit-icon" />
-        <img src={deleteIcon} alt="Delete" className="icon delete-icon" />
+        <img
+          onClick={() => handleDeleteProduct(product._id)} // Pass product._id here
+          src={deleteIcon}
+          alt="Delete"
+          className="icon delete-icon"
+        />
       </div>
     </div>
   );
